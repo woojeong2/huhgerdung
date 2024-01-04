@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charest="utf-8">
+         <title>허거덩의 계산기</title>
+         <script>
+            function cal(){
+                // 예상 월세
+                let monthlyTax = Number(document.getElementById('monthlyTax').value);
+                // 예상 관리비
+                let management = Number(document.getElementById('management').value);
+                // 보증금
+                let deposit = Number(document.getElementById('deposit').value);
+                // 금리
+                let rate = Number(document.getElementById('rate').value);
+                document.getElementById("res").value = monthlyTax + management + (deposit * (rate / 100) / 12);
+            }
+
+            function reset(){
+                document.getElementById("monthlyTax").value = "";
+                document.getElementById("management").value = "";
+                document.getElementById("deposit").value = "";
+                document.getElementById("rate").value = "";
+                document.getElementById("res").value = "";
+            }
+         </script>
+    </head>
+    <body1>
+        <br><br> 독립하는 청년들이여 화이팅! <br><br>
+    </body1>
+    <body2>
+        예상 월세: 
+        <input type="text" id="monthlyTax"> 원<br>
+        예상 관리비: 
+        <input type="text" id="management"> 원<br>
+        보증금: 
+        <input type="text" id="deposit"> 원<br>
+        금리: 
+        <input type="text" id="rate"> %<br>
+        결과: 
+        <input type="text" disabled id="res"> 원<br><br>
+        <br><br>
+        <input type="button" value="계산하기" onclick="cal()">
+        <input type="button" value="초기화" onclick="reset()">
+    </body2>
+</html>
